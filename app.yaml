@@ -1,0 +1,8 @@
+# Definition of app engine deployment
+runtime: python39
+entrypoint: gunicorn -b :$PORT --chdir app/ app.wsgi:application
+
+handlers:
+  - url: /.*
+    script: auto
+
