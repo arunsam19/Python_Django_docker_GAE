@@ -1,2 +1,23 @@
+Files to be updaed:
+	requirements.txt
+	Dockerfile
+	create empty folder ./app
+	docker-compose.yml
+
 docker compose run --rm app sh -c "django-admin startproject app ."
 docker compose run --rm app sh -c "python manage.py startapp demo"
+docker compose up
+
+GCP - App Engine:
+    Environment:    
+        - Standard: 
+            Google manages the server entirely.
+Deploy App to the App Engine
+Different docker compose file for GCP:
+    common environment for all 
+
+docker compose -f docker-compose-deploy.yml run --rm gcloud sh -c "gcloud auth login"
+docker compose run --rm app sh -c "python manage.py collectstatic"
+chomd 777 static
+docker compose -f docker-compose-deploy.yml run --rm gcloud sh -c "gcloud app deploy --project my-first-project-384114"
+            

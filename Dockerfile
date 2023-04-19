@@ -1,5 +1,5 @@
 FROM python:3.9-alpine
-LABEL maintainer="arunprakasam.s@gmail.com"
+LABEL maintainer="arunpsam33@gmail.com"
 
 COPY ./requirements.txt /requirements.txt
 COPY ./app /app
